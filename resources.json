@@ -1,0 +1,131 @@
+{
+    "website_recommendations": {
+      "home": {
+        "purpose": "Welcome visitors, highlight key updates, and direct traffic to core services",
+        "content": {
+          "hero_section": {
+            "title": "Powering Every Community in Imo State",
+            "background_image": "solar projects, grid work, etc."
+          },
+          "quick_access_buttons": [
+            "File a Complaint",
+            "Check Project Progress",
+            "Apply for Metering or Licensing",
+            "Give Feedback"
+          ],
+          "news_ticker": "Recent announcements or alerts",
+          "featured_projects": [
+            "Light Up Imo",
+            "rural solar mini-grids, etc."
+          ],
+          "commissioners_welcome_note": "Brief intro from Hon. Nwabueze Oguchienti",
+          "partners_logo_strip": [
+            "Orashi Electric",
+            "Madkour",
+            "ISERC",
+            "etc."
+          ]
+        }
+      },
+      "about_us": {
+        "purpose": "Explain the ministry's mandate, leadership, mission, and goals",
+        "sections": {
+          "overview": [
+            "History of the ministry",
+            "Legal basis (Imo Electricity Law 2024)",
+            "Vision & Mission Statements"
+          ],
+          "mandate_strategic_goals": [
+            "Universal electrification",
+            "Renewable energy focus",
+            "Infrastructure modernization"
+          ],
+          "leadership": [
+            "Commissioner",
+            "Permanent Secretary",
+            "Directorates/Heads of Units"
+          ],
+          "organizational_chart": "Visual hierarchy of the ministry"
+        }
+      },
+      "head_of_service": {
+        "title": "Office of the Commissioner",
+        "commissioner": {
+          "name": "Hon. Engr. Nwabueze Oguchienti",
+          "position": "Commissioner, Ministry of Power and Electrification, Imo State",
+          "bio": "Hon. Engr. Nwabueze Oguchienti is the current Commissioner for Power and Electrification in Imo State, appointed by his Excellency, Governor Hope Uzodimma. A seasoned engineer and energy sector expert, he brings over 20 years of professional experience in electrical infrastructure, rural electrification, and project development.",
+          "message": "Electricity is not luxury - it is a necessity. My mission is to make power available, affordable and sustainable for every imolite. Through strategic investments, private partnerships, and regulatory reforms, we are reshaping the power sector in Imo State to deliver long-term impact. Our focus is clear: to power homes, energize businesses, and electrify our future.",
+          "key_responsibilities": [
+            "Oversee policy design and execution for energy access across Imo State",
+            "Supervise all departments and parastatals under the ministry",
+            "Drive flagship programs such as the Light Up Imo initiative"
+          ],
+          "initiatives": [
+            {
+              "name": "Light Up Imo",
+              "description": "Electrification of over 300 communities by 2026"
+            },
+            {
+              "name": "Renewable Energy Integration",
+              "description": "Rollout of solar mini-grids communities"
+            },
+            {
+              "name": "Infrastructure Upgrades",
+              "description": "Modernize of transformers, substations, and distribution lines"
+            }
+          ],
+          "contact": {
+            "office_location": "Ministry of Power and Electrification, State Secretariat Complex, Port Harcourt Road, New Owerri, Imo State, Nigeria",
+            "email": "commissioner.power@imostate.gov.ng",
+            "phone": "+2348149815425"
+          }
+        }
+      },
+      "departments_agencies": {
+        "purpose": "Detail the key functional units of the ministry and what each does",
+        "content_format": "Sections or Tabs",
+        "departments": [
+          {
+            "name": "Department of Rural Electrification",
+            "focus": "Projects in underserved communities"
+          },
+          {
+            "name": "Department of Transmission & Distribution",
+            "focus": "Upgrades, maintenance, grid expansion"
+          },
+          {
+            "name": "Department of Renewable Energy",
+            "focus": "Solar mini-grids, clean energy policy"
+          },
+          {
+            "name": "Department of Consumer Affairs",
+            "focus": "Complaints, metering, customer engagement"
+          },
+          {
+            "name": "Department of Policy & Planning",
+            "focus": "Strategic frameworks, partnerships, data"
+          }
+        ]
+      },
+      "services": {
+        "purpose": "List what the ministry offers to the public and investors",
+        "sections": {
+          "public_services": [
+            "Complaint submission & dispute resolution (via ISERC)",
+            "Meter request process",
+            "Fault reporting (e.g., downed transformers)"
+          ],
+          "investor_services": [
+            "Licensing for embedded generation/mini-grids",
+            "How to partner with the ministry"
+          ],
+          "downloads": [
+            "Application forms",
+            "Licensing guides",
+            "Power audit summaries",
+            "FOI request template (optional)"
+          ]
+        }
+      }
+    }
+  }
