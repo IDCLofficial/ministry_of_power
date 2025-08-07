@@ -20,7 +20,7 @@ export const Hero = ({title, caption, subtitle}: HeroProps) => {
                 key={bgImage}
                 src={bgImage}
                 className="absolute inset-0 w-full h-full object-cover z-0"
-                initial={{ scale: .97}}
+                initial={{ scale: .99}}
                 whileInView={{ scale: 1}}
                 transition={{ duration: 2, ease: "easeOut" }}
             />

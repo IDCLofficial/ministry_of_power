@@ -10,7 +10,7 @@ import FeaturedPartners from "./components/FeaturedPartners";
 
 export default function Home() {
   return (
-    <div className="h-screen w-full bg-red-400">
+    <div className="h-screen w-full">
       <Hero
         title="Imo State Ministry of Power and Electrification" 
         caption= "Providing Power for Every Community in Imo State" 
