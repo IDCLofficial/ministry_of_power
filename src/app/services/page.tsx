@@ -10,7 +10,7 @@ export default function ServicesPage() {
             <ServicesSection />
             
             {/* Downloadable Forms Section */}
-            <section className="w-full max-w-7xl mx-auto py-16 px-4 md:px-8">
+            {/* <section className="w-full max-w-7xl mx-auto py-16 px-4 md:px-8">
                 <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-dark-primary">Downloadable Forms</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div className="bg-white border border-gray-200 rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
@@ -45,7 +45,7 @@ export default function ServicesPage() {
                         </a>
                     </div>
                 </div>
-            </section>
+            </section> */}
             
             <CTASection 
                 heading="Partner with Us to Power Every Community in Imo State" 

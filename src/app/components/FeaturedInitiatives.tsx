@@ -20,10 +20,10 @@ export default function FeaturedInitiatives() {
         initial={{ opacity: 0, y: 80 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8 px-0"
+        className="w-full flex flex-col lg:flex-row gap-4 sm:gap-5 md:gap-6 lg:gap-8 px-0"
       >
         {projects?.slice(0, 4).map((project) => (
-          <div key={project.title} className="border border-gray-200 bg-white flex flex-col h-full relative cursor-pointer hover:scale-[1.02] sm:hover:scale-105 transition-all duration-300 rounded-lg overflow-hidden">
+          <div key={project.title} className="flex-1 border border-gray-200 bg-white flex flex-col h-full relative cursor-pointer hover:scale-[1.02] sm:hover:scale-105 transition-all duration-300 rounded-lg overflow-hidden">
             <div className="relative w-full h-[140px] sm:h-[160px] md:h-[200px] lg:h-[220px] z-0">
               <Image src={project.image} alt={project.title} fill className="object-cover" />
             </div>

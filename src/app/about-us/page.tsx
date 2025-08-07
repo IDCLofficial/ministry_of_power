@@ -16,14 +16,14 @@ export default function AboutUs() {
             <AboutUsHero ministryName="Ministry of Power and Electrification" />
             <AboutSection 
                 aboutText="The Imo State Ministry of Power and Electrification is the state's primary agency responsible for ensuring universal access to reliable, affordable, and sustainable electricity. The ministry coordinates power sector development, implements electrification programs, and promotes renewable energy initiatives to transform Imo State into a modern, energy-sufficient economy."
-                imgSrc="/images/power-ministry.jpg" 
+                imgSrc="/images/solar.jpg" 
                 altText="Ministry of Power and Electrification building" 
             />
             <MVSSection />   
             <TeamGridSection members={teamMembers} />
             <ObjectivesSection />
             <StructuresSection 
-                imgSrc="/images/fed-sec.jpg"
+                imgSrc="/images/building.png"
             />
             <CTASection 
                 heading="Partner with Us to Power Every Community in Imo State"

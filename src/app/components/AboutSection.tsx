@@ -13,24 +13,24 @@ interface AboutSectionProps {
 export default function AboutSection({title, subtitle, image1, image2}: AboutSectionProps) {
   return (
     <section className={`relative w-full p-4 sm:p-6 md:px-4 py-12 sm:py-16 md:py-20 bg-[url('/images/gradient.png')] bg-no-repeat bg-cover shadow-lg overflow-hidden`}>
-      <div className="flex flex-col gap-8 items-left w-full md:w-[90%] mx-auto">
+      <div className="flex flex-col gap-8 items-left w-full md:w-[95%] mx-auto">
         {/* Left: Text Content */}
-        <div className="flex flex-col lg:flex-row h-full justify-between w-full gap-6 md:gap-8">
+        <div className="flex flex-col lg:flex-row h-full justify-between w-full gap-6">
             <PageTransition type="fadeUp">
-            <div className="flex flex-col gap-2 w-full lg:w-[60%]">
+              <div className="flex flex-col gap-2 w-full md:w-auto">
                 <Title label={title}/>
-                <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-[43px] font-bold text-white leading-tight mb-4 py-2 sm:py-4">
-                    Our Mandate — Ministry of <br/>
-                    <span className="text-green-400"> Power and Electrification</span>
+                <h2 className="text-2xl sm:text-3xl lg:text-[43px] font-bold text-white leading-tight py-4">
+                  Our Mandate — Mininstry of <br/>
+                  <span className="text-green-400"> Power and Electrification</span>
                 </h2>
-            </div>
-            <div className="relative rounded-lg overflow-hidden w-full lg:w-[40%] h-[180px] sm:h-[220px] md:h-[280px] lg:h-[320px] max-lg:hidden">
+              </div>
+            <div className="relative rounded-lg overflow-hidden w-full lg:w-[40%] h-[180px] sm:h-[220px] md:h-[280px] lg:h-[320px] lg:hidden">
               <Image src={image1} alt="Mandate 1" fill className="object-cover" />
             </div>
               </PageTransition>
-            <div className="w-full lg:w-[60%] flex flex-col gap-4">
+            <div className="w-full lg:w-[40%] flex flex-col gap-4">
               <PageTransition type="fadeUp">
-                <p className="text-gray-200 text-[0.9rem] sm:text-[1rem] md:text-[16px] max-w-2xl text-justify">
+                <p className="text-gray-200 text-[0.9rem] sm:text-[1rem] md:text-[16px] max-w-lg text-justify">
                     {subtitle}
                 </p>
               </PageTransition>

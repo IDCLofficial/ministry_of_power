@@ -1,5 +1,10 @@
+"use client";
+
+import React from "react";
+import "./objectives-animation.css";
+
 export const ObjectivesSection = () => {
-    const agencies: { title: string; description: string }[] = [
+    const objectives: { title: string; description: string }[] = [
         {
             title: "Universal Electrification",
             description: "Ensure access to reliable electricity for all communities across Imo State through targeted infrastructure development and grid expansion programs."
@@ -33,17 +38,20 @@ export const ObjectivesSection = () => {
                     <h2 className="text-2xl sm:text-3xl md:text-[43px] font-medium text-center mb-8 sm:mb-10 md:mb-12">
                         Our Strategic Objectives
                     </h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-                        {agencies.map((agency, index) => (
-                            <div key={index} className="bg-white p-4 sm:p-5 md:p-6 rounded-lg shadow-md border border-gray-200 text-center w-full">
-                                <h3 className="font-medium text-lg sm:text-xl md:text-[22px] mb-2 sm:mb-2.5 md:mb-3">
-                                    {agency.title}
-                                </h3>
-                                <p className="text-dark-primary-body text-sm sm:text-base md:text-[1rem]">
-                                    {agency.description}
-                                </p>
-                            </div>
-                        ))}
+                    <div className="overflow-hidden py-4">
+                        <div className="flex animate-scroll space-x-6">
+                            {/* Duplicate the objectives to create a seamless infinite scroll */}
+                            {[...objectives, ...objectives].map((objective, index) => (
+                                <div key={index} className="flex-shrink-0 bg-white p-4 sm:p-5 md:p-6 rounded-lg shadow-md border border-gray-200 text-center w-[300px] md:w-[350px]">
+                                    <h3 className="font-medium text-lg sm:text-xl md:text-[22px] mb-2 sm:mb-2.5 md:mb-3">
+                                        {objective.title}
+                                    </h3>
+                                    <p className="text-dark-primary-body text-sm sm:text-base md:text-[1rem]">
+                                        {objective.description}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
 
