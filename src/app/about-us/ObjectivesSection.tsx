@@ -32,7 +32,7 @@ export const ObjectivesSection = () => {
 
     return (
         <section className="w-full bg-white py-10 sm:py-16 md:py-20">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
+            <div className="mmx-auto px-4 sm:px-6 md:px-8">
                 {/* IMDEEG's Objectives */}
                 <div className="mb-12 sm:mb-14 md:mb-16">
                     <h2 className="text-2xl sm:text-3xl md:text-[43px] font-medium text-center mb-8 sm:mb-10 md:mb-12">
