@@ -10,7 +10,7 @@ const partners = [
 
 export default function FeaturedPartners() {
   return (
-    <section className="w-full py-16 sm:py-20 bg-[#f7f9fa] max-w-7xl mx-auto px-4 sm:px-6">
+    <section className="w-full py-16 sm:py-20 bg-[#f7f9fa] mx-auto px-4 sm:px-6">
       <motion.h2 
         initial={{ opacity: 0, y: 80 }}
         whileInView={{ opacity: 1, y: 0 }}
