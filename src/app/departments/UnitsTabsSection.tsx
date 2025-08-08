@@ -15,7 +15,7 @@ export default function UnitsTabsSection() {
       <div className="w-full lg:w-2/6 pr-0 sm:pr-4">
         <ul className="space-y-2 flex gap-2 sm:gap-3 lg:flex-col lg:gap-2 overflow-x-auto pb-2 lg:pb-0">
           {departments.map((dept, idx) => (
-            <li key={dept.name} className="flex-1 min-w-[200px] sm:min-w-[250px] lg:min-w-0">
+            <li key={dept.name} className="flex-1 w-max sm:w-max lg:min-w-0">
               <button
                 className={`w-full text-left px-3 sm:px-4 py-2 sm:py-3 rounded-lg border text-nowrap text-sm sm:text-base ${activeIdx === idx ? 'bg-green-600 text-white border-green-600' : 'bg-white text-black border-gray-300'} transition`}
                 onClick={() => setActiveIdx(idx)}

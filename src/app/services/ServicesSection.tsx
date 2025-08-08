@@ -2,27 +2,27 @@ import ServiceCard from "./ServiceCard";
 
 const services = [
   {
-    imgSrc: "",
+    imgSrc: "/images/dispute_resolution.jpg",
     title: "Complaint Submission & Dispute Resolution",
     description: "Submit complaints about power supply issues and get timely resolution for disputes related to electricity services."
   },
   {
-    imgSrc: "",
+    imgSrc: "/images/meter.jpg",
     title: "Meter Request Process",
     description: "Apply for new electricity meters or request meter replacements through our streamlined process."
   },
   {
-    imgSrc: "",
+    imgSrc: "/images/fault_testing.jpg",
     title: "Fault Reporting",
     description: "Report power outages, electrical faults, or infrastructure issues for prompt attention and resolution."
   },
   {
-    imgSrc: "",
+    imgSrc: "/images/mini-grids.png",
     title: "Licensing for Embedded Generation/Mini-Grids",
     description: "Obtain licenses for private electricity generation and mini-grid operations in accordance with state regulations."
   },
   {
-    imgSrc: "",
+    imgSrc: "/images/partnership.jpeg",
     title: "Partnership Opportunities",
     description: "Explore collaboration opportunities with the Ministry for power infrastructure development and electrification projects."
   }

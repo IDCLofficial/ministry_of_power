@@ -22,7 +22,7 @@ const TeamGridSection: React.FC<TeamGridSectionProps> = ({ members }) => {
         {members.map((member, idx) => (
           <div key={idx} className="flex flex-col rounded-xl w-full max-w-[280px]">
             <div className="w-full mb-2 sm:mb-3 md:mb-4 relative">
-              <Image src={member.imgSrc} alt={member.name} width={100} height={100} className="w-full h-[140px] sm:h-[160px] md:h-[200px] lg:h-[230px] object-fill rounded-xl" />
+              <Image src={member.imgSrc} alt={member.name} width={100} height={100} className="w-full h-[220px] sm:h-[200px] md:h-[200px] lg:h-[230px] object-fit rounded-xl" />
             </div>
             <h3 className="text-lg sm:text-xl md:text-lg lg:text-xl font-semibold text-[#232c39] mb-1 text-center">{member.name}</h3>
             <span className="text-green-600 text-xs sm:text-sm md:text-sm lg:text-base font-medium text-center">{member.position}</span>

@@ -11,7 +11,7 @@ export default function UnitsHeroSection() {
       </div>
       <div className="relative z-10 flex justify-center px-4">
         <motion.h1
-          className="text-white text-2xl sm:text-3xl md:text-5xl font-bold text-center leading-tight py-2"
+          className="text-white text-2xl sm:text-3xl md:text-5xl font-bold text-center leading-tight"
           initial={{ opacity: 1 }}
           animate={{}}
         >
