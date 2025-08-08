@@ -16,6 +16,7 @@ const categories = [
 const popularNews = newsList.slice(0, 3).map(({ title, date, img }) => ({ title, date, img }));
 
 export default function NewsSidebar() {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -35,7 +36,11 @@ export default function NewsSidebar() {
             <h3 className="font-medium text-base mb-2">CATEGORIES</h3>
             <ul className="space-y-2 mb-4">
               {categories.map((cat, idx) => (
-                <li key={idx} className="flex justify-between text-gray-700 text-sm">
+                <li
+                  key={idx}
+                  className={`flex justify-between text-gray-700 text-sm cursor-pointer rounded px-2 py-1 transition-colors duration-150 ${selectedCategory === cat.name ? 'bg-primary-green/20 font-semibold' : 'hover:bg-gray-100'}`}
+                  onClick={() => setSelectedCategory(cat.name)}
+                >
                   <span>{cat.name}</span>
                   <span>{cat.count}</span>
                 </li>
@@ -66,7 +71,11 @@ export default function NewsSidebar() {
           <h3 className="font-medium text-base md:text-[18px] mb-2 md:mb-4">CATEGORIES</h3>
           <ul className="space-y-1 md:space-y-2">
             {categories.map((cat, idx) => (
-              <li key={idx} className="flex justify-between text-gray-700 text-xs md:text-[15px]">
+              <li
+                key={idx}
+                className={`flex justify-between text-gray-700 text-xs md:text-[15px] cursor-pointer rounded px-2 py-1 transition-colors duration-150 ${selectedCategory === cat.name ? 'bg-primary-green/20 font-semibold' : 'hover:bg-gray-100'}`}
+                onClick={() => setSelectedCategory(cat.name)}
+              >
                 <span>{cat.name}</span>
                 <span>{cat.count}</span>
               </li>
@@ -83,7 +92,7 @@ export default function NewsSidebar() {
                     <Image src={news.img} alt={news.title} width={100} height={100} className="object-cover w-full h-full" />
                   </div>
                   <div>
-                  <div className="text-xs md:text-[14px] font-medium leading-tight line-clamp-2">{news.title}</div>
+                    <div className="text-xs md:text-[14px] font-medium leading-tight line-clamp-2">{news.title}</div>
                     <div className="text-[10px] text-gray-500 mt-1">{news.date}</div>
                   </div>
                 </Link>
@@ -98,7 +107,11 @@ export default function NewsSidebar() {
           <h3 className="font-medium text-base md:text-[18px] mb-2 md:mb-4">CATEGORIES</h3>
           <ul className="space-y-1 md:space-y-2">
             {categories.map((cat, idx) => (
-              <li key={idx} className="flex justify-between text-gray-700 text-xs md:text-[15px]">
+              <li
+                key={idx}
+                className={`flex justify-between text-gray-700 text-xs md:text-[15px] cursor-pointer rounded px-2 py-1 transition-colors duration-150 ${selectedCategory === cat.name ? 'bg-primary-green/20 font-semibold' : 'hover:bg-gray-100'}`}
+                onClick={() => setSelectedCategory(cat.name)}
+              >
                 <span>{cat.name}</span>
                 <span>{cat.count}</span>
               </li>
@@ -115,7 +128,7 @@ export default function NewsSidebar() {
                     <Image src={news.img} alt={news.title} width={100} height={100} className="object-cover w-full h-full" />
                   </div>
                   <div>
-                  <div className="text-xs md:text-[14px] font-medium leading-tight line-clamp-2">{news.title}</div>
+                    <div className="text-xs md:text-[14px] font-medium leading-tight line-clamp-2">{news.title}</div>
                     <div className="text-[10px] text-gray-500 mt-1">{news.date}</div>
                   </div>
                 </Link>

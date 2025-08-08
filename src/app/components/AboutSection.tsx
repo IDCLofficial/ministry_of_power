@@ -25,7 +25,13 @@ export default function AboutSection({title, subtitle, image1, image2}: AboutSec
                 </h2>
               </div>
             <div className="relative rounded-lg overflow-hidden w-full lg:w-[40%] h-[180px] sm:h-[220px] md:h-[280px] lg:h-[320px] lg:hidden">
-              <Image src={image1} alt="Mandate 1" fill className="object-cover" />
+              <Image 
+                src={image1} 
+                alt="Mandate 1" 
+                width={1280}
+                height={1280}
+                className="object-cover object-[40%_40%] w-full h-full" 
+              />
             </div>
               </PageTransition>
             <div className="w-full lg:w-[40%] flex flex-col gap-4">
@@ -39,15 +45,29 @@ export default function AboutSection({title, subtitle, image1, image2}: AboutSec
         </div>
         {/* Right: Images */}
 
-        <div className="">
-          <div className="relative rounded-lg overflow-hidden w-full h-[180px] sm:h-[220px] mb-4 max-lg:hidden">
-            <Image src={image1} alt="Mandate 1" fill className="object-cover" />
+        <div className="flex gap-2 items-stretch">
+          <div className="relative rounded-lg overflow-hidden w-full h-[180px] sm:h-[300px] mb-4 max-lg:hidden">
+            <Image 
+              src={image1} 
+              alt="Mandate 1" 
+              width={1280}
+              height={1280}
+              className="object-cover object-[40%_40%] w-full h-full" 
+            />
           </div>
-          <div className="relative rounded-lg overflow-hidden w-full h-[180px] sm:h-[220px] mb-6">
-            <Image src={image2} alt="Mandate 2" fill className="object-cover" />
+          <div className="relative bg-red-500 rounded-lg overflow-hidden w-full h-[180px] sm:h-[300px] mb-6">
+            <Image 
+              src={image2} 
+              alt="Mandate 2"
+              width={1280}
+              height={1280} 
+              // fill 
+              // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+              className="object-cover object-[40%_40%] w-full h-full" 
+            />
           </div>
-          <AppLink href="/about-us" label="Learn More" variant="secondary" className="w-max border border-primary-green text-[14px] sm:text-[15px] px-[1.5rem] sm:px-[2rem] py-[10px] sm:py-[12px] rounded-[3.4px] font-medium hover:bg-primary-green hover:text-white transition-all duration-300 mx-auto block"/>
         </div>
+        <AppLink href="/about-us" label="Learn More" variant="secondary" className="w-max border border-primary-green text-[14px] sm:text-[15px] px-[1.5rem] sm:px-[2rem] py-[10px] sm:py-[12px] rounded-[3.4px] font-medium hover:bg-primary-green hover:text-white transition-all duration-300 mx-auto block lg:hidden"/>
       </div>
     </section>
   );

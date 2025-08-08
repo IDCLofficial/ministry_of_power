@@ -24,9 +24,9 @@ export default function AboutCommisioner({imgSrc, title}: AboutCommisionerProps)
                     <Image
                     src={imgSrc}
                     alt="Commissioner"
-                    fill
-                    className="object-cover object-center rounded-xl"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
+                    height={1280}
+                    width={1280}
+                    className="object-cover object-[40%_70%] w-full h-full rounded-xl"
                     />
                 </div>
             </div>
