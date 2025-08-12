@@ -3,13 +3,10 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaFacebookF, FaTwitter, FaInstagra
 
 const contactInfo = {
   address: "Ministry of Power and Electrification, Imo State Secretariat Complex, Owerri, Imo State, Nigeria",
-  email: "powerministry@imostate.gov.ng",
-  phone: "+234 812 345 6789",
+  email: "commissioner.power@imostate.gov.ng",
+  phone: "07034991521",
   socials: [
-    { icon: <FaFacebookF />, href: "https://www.facebook.com/ImoPowerMinistry/" },
-    { icon: <FaTwitter />, href: "https://twitter.com/ImoPowerMinistry" },
-    { icon: <FaInstagram />, href: "https://instagram.com/ImoPowerMinistry" },
-    { icon: <FaLinkedinIn />, href: "https://linkedin.com/company/ImoPowerMinistry" },
+    { icon: <FaTwitter />, href: "https://x.com/GovtOfImoState" },
   ],
 };
 
