@@ -3,21 +3,31 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BiChevronDown } from "react-icons/bi";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import newsList from "./newsList";
 
-const categories = [
-  { name: "Electrification Projects", count: 8 },
-  { name: "Renewable Energy", count: 4 },
-  { name: "Infrastructure", count: 6 },
-  { name: "Policy Updates", count: 3 },
-];
+export type FilterOption = 'Policies' | 'Trending' | 'Latest Updates';
+
+type Props = {
+  selectedFilter: FilterOption;
+  onFilterChange: (filter: FilterOption) => void;
+};
 
 const popularNews = newsList.slice(0, 3).map(({ title, date, img }) => ({ title, date, img }));
 
-export default function NewsSidebar() {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+export default function NewsSidebar({ selectedFilter, onFilterChange }: Props) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const categories = useMemo(() => {
+    const policiesCount = newsList.filter((n) => n.badge === 'Policy').length;
+    const trendingCount = Math.min(3, newsList.length);
+    const latestCount = newsList.length; // all items, newest first handled in grid
+    return [
+      { name: 'Policies' as const, count: policiesCount },
+      { name: 'Trending' as const, count: trendingCount },
+      { name: 'Latest Updates' as const, count: latestCount },
+    ];
+  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -38,8 +48,8 @@ export default function NewsSidebar() {
               {categories.map((cat, idx) => (
                 <li
                   key={idx}
-                  className={`flex justify-between text-gray-700 text-sm cursor-pointer rounded px-2 py-1 transition-colors duration-150 ${selectedCategory === cat.name ? 'bg-primary-green/20 font-semibold' : 'hover:bg-gray-100'}`}
-                  onClick={() => setSelectedCategory(cat.name)}
+                  className={`flex justify-between text-gray-700 text-sm cursor-pointer rounded px-2 py-1 transition-colors duration-150 ${selectedFilter === cat.name ? 'bg-primary-green/20 font-semibold' : 'hover:bg-gray-100'}`}
+                  onClick={() => onFilterChange(cat.name)}
                 >
                   <span>{cat.name}</span>
                   <span>{cat.count}</span>
@@ -73,8 +83,8 @@ export default function NewsSidebar() {
             {categories.map((cat, idx) => (
               <li
                 key={idx}
-                className={`flex justify-between text-gray-700 text-xs md:text-[15px] cursor-pointer rounded px-2 py-1 transition-colors duration-150 ${selectedCategory === cat.name ? 'bg-primary-green/20 font-semibold' : 'hover:bg-gray-100'}`}
-                onClick={() => setSelectedCategory(cat.name)}
+                className={`flex justify-between text-gray-700 text-xs md:text-[15px] cursor-pointer rounded px-2 py-1 transition-colors duration-150 ${selectedFilter === cat.name ? 'bg-primary-green/20 font-semibold' : 'hover:bg-gray-100'}`}
+                onClick={() => onFilterChange(cat.name)}
               >
                 <span>{cat.name}</span>
                 <span>{cat.count}</span>
@@ -109,8 +119,8 @@ export default function NewsSidebar() {
             {categories.map((cat, idx) => (
               <li
                 key={idx}
-                className={`flex justify-between text-gray-700 text-xs md:text-[15px] cursor-pointer rounded px-2 py-1 transition-colors duration-150 ${selectedCategory === cat.name ? 'bg-primary-green/20 font-semibold' : 'hover:bg-gray-100'}`}
-                onClick={() => setSelectedCategory(cat.name)}
+                className={`flex justify-between text-gray-700 text-xs md:text-[15px] cursor-pointer rounded px-2 py-1 transition-colors duration-150 ${selectedFilter === cat.name ? 'bg-primary-green/20 font-semibold' : 'hover:bg-gray-100'}`}
+                onClick={() => onFilterChange(cat.name)}
               >
                 <span>{cat.name}</span>
                 <span>{cat.count}</span>
