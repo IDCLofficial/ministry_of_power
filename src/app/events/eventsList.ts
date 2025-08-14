@@ -18,12 +18,12 @@ type event = {
 
 export const events: event[] = [
   {
-    slug: "2025-budget-signing-miistry-of-power",
+    slug: "2025-budget-signing-ministry-of-power",
     date: "2024-12-31",
     location: "Government House, New Exco Chambers, Owerri",
     title: "Signing of 2025 Budget — Ministry of Power Allocation",
     description:
-      "Governor Hope Uzodimma signed the 2025 Appropriation Bill into law, allocating ₦74.76 billion (10.8%) to the Ministry of Power and Electrification to boost electricity infrastructure and 24/7 power goals. :contentReference[oaicite:0]{index=0}",
+      "Governor Hope Uzodimma signed the 2025 Appropriation Bill into law, allocating ₦74.76 billion (10.8%) to the Ministry of Power and Electrification to boost electricity infrastructure and 24/7 power goals.",
     img: "/images/events/governor.jpg",
     time: "10:00 am",
     organizer: "Governor's Office, Imo State",
@@ -31,7 +31,7 @@ export const events: event[] = [
     address: "Government House, Owerri",
     speakers: [
       {
-        name: "Hope Uzodimma",
+        name: "His Excellency, Hope Uzodimma",
         img: "/images/events/governor.jpg",
         role: "Governor of Imo State"
       }
@@ -43,7 +43,7 @@ export const events: event[] = [
     location: "Imo State House of Assembly, Owerri",
     title: "Imo State Electrical Bill Passed into Law",
     description:
-      "Imo State House of Assembly passed the State Electrical Bill, enabling the state to issue licences for mini-grids and power plants under the framework of the Federal Electricity Act 2023. :contentReference[oaicite:1]{index=1}",
+      "Imo State House of Assembly passed the State Electrical Bill, enabling the state to issue licences for mini-grids and power plants under the framework of the Federal Electricity Act 2023.",
     img: "/images/events/governor.jpg",
     time: "10:00 am",
     organizer: "Imo State House of Assembly",
@@ -63,7 +63,7 @@ export const events: event[] = [
     location: "ISERC Offices, Imo State",
     title: "ISERC Inaugurates Customer Complaints Forum",
     description:
-      "ISERC inaugurated a five-member forum to resolve electricity consumer complaints and appeals against distribution companies, reinforcing consumer protection in the state's power sector. :contentReference[oaicite:3]{index=3}",
+      "ISERC inaugurated a five-member forum to resolve electricity consumer complaints and appeals against distribution companies, reinforcing consumer protection in the state's power sector.",
     img: "/images/events/governor2.jpg",
     time: "10:00 am",
     organizer: "Imo State Electricity Regulatory Commission (ISERC)",
@@ -88,7 +88,7 @@ export const events: event[] = [
     location: "ISERC Offices, Owerri",
     title: "Second Customers’ Forum by ISERC",
     description:
-      "ISERC organized its second customers’ forum where electricity consumers presented their challenges; the commission reaffirmed its commitment to resolving backlog complaints and delivering reliable power access. :contentReference[oaicite:4]{index=4}",
+      "ISERC organized its second customers’ forum where electricity consumers presented their challenges; the commission reaffirmed its commitment to resolving backlog complaints and delivering reliable power access.",
     img: "/images/events/iserc.png",
     time: "10:00 am",
     organizer: "Imo State Electricity Regulatory Commission (ISERC)",
