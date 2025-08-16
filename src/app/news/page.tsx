@@ -1,24 +1,56 @@
-"use client";
 import NewsHeroSection from "./NewsHeroSection";
 import NewsSidebar from "./NewsSidebar";
 import NewsGrid from "./NewsGrid";
 import Footer from "../components/Footer";
 import CTASection from "../components/CTASection";
-import { useState } from "react";
-import type { FilterOption } from "./NewsSidebar";
+import { getNewsList } from "./newsList";
 
-export default function NewsPage() {
-  const [selectedFilter, setSelectedFilter] = useState<FilterOption>('Latest Updates');
+export default async function NewsPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  const newsList = await getNewsList();
+
+  // Normalize and compute derived lists
+  const latestSorted = [...newsList].sort(
+    (a, b) => new Date(b.sys.createdAt).getTime() - new Date(a.sys.createdAt).getTime()
+  );
+  const policies = newsList.filter(
+    (n) => n.fields.category?.fields?.category_name?.toLowerCase() === "policies"
+  );
+  const trending = latestSorted.slice(0, 3);
+
+  const sp = await searchParams;
+  const rawFilter = Array.isArray(sp?.filter) ? sp.filter[0] : (sp?.filter as string | undefined);
+  const filter = (rawFilter || "").toLowerCase();
+  const filteredList =
+    filter === "policies" ? policies : filter === "trending" ? trending : filter === "latest" ? latestSorted : newsList;
+
+  const categories = [
+    { key: "latest", name: "Latest Updates", count: newsList.length },
+    { key: "policies", name: "Policies", count: policies.length },
+    { key: "trending", name: "Trending", count: trending.length },
+  ];
+
+  const popularNews = latestSorted.slice(0, 3).map((post) => ({
+    title: post.fields.title,
+    img: post.fields.featuredImage?.fields.file.url,
+    badge: post.fields.category,
+    desc: post.fields.content,
+  }));
+
   return (
     <div className="bg-white">
-      <NewsHeroSection />
-      <div className="w-full max-w-[100%] mx-auto flex flex-col md:flex-row gap-4 md:gap-8 px-2 md:px-8 py-8 md:py-20">
-        <NewsSidebar selectedFilter={selectedFilter} onFilterChange={setSelectedFilter} />
+      <NewsHeroSection newsList={newsList} />
+      <div className="w-full max-w-[100%] mx-auto flex flex-col lg:flex-row gap-4 md:gap-8 px-2 md:px-8 py-8 md:py-20">
+        <NewsSidebar categories={categories} popularNews={popularNews} selectedFilter={filter || "latest"} />
         <div className="flex-1">
-          <NewsGrid selectedFilter={selectedFilter} />
+          <NewsGrid newsList={filteredList} />
         </div>
       </div>
-      <CTASection heading="Partner with Us to Power Every Community in Imo State" subtext="Want to get involved in our electrification initiatives or partner with us? Reach out today" buttonLabel="Contact Us" buttonHref="/contact-us"/>
+      <CTASection 
+        heading="Partner with Us to Power Every Community in Imo State"
+        subtext="Want to get involved in our electrification initiatives or partner with us? Reach out today"
+        buttonLabel="Contact Us"
+        buttonHref="/contact-us"
+      />
       <Footer />
     </div>
   );

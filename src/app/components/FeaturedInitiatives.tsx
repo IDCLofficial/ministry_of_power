@@ -2,17 +2,17 @@
 
 import Image from "next/image";
 import { AppLink } from "./AppLink";
-import { projects } from "../projects/projects";
 import {motion} from 'framer-motion'
+import { Project } from "../../../lib/types";
 
-export default function FeaturedInitiatives() {
+export default function FeaturedInitiatives({projects}:{projects:Project[]}) {
   return (
-    <section className="w-full p-4 sm:p-6 md:p-8 py-10 sm:py-12 md:py-16 bg-white flex flex-col items-center gap-6 sm:gap-8 max-w-7xl mx-auto">
+    <section className="w-full p-4 md:p-8 py-10 md:py-16 bg-white flex flex-col items-center gap-8">
       <motion.h2 
         initial={{ opacity: 0, y: 80 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="text-dark-primary text-2xl sm:text-2xl md:text-3xl lg:text-[43px] font-medium text-center mb-6 sm:mb-8 md:mb-12"
+        className="text-dark-primary text-2xl md:text-3xl lg:text-[43px] font-medium text-center md:mb-12"
       >
         Featured Initiatives
       </motion.h2>
@@ -20,25 +20,25 @@ export default function FeaturedInitiatives() {
         initial={{ opacity: 0, y: 80 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8 px-0"
+        className="w-full mx-auto flex flex-col lg:flex-row justify-center gap-6 md:gap-8 px-0 md:px-4"
       >
         {projects?.slice(0, 4).map((project) => (
-          <div key={project.title} className="flex-1 border border-gray-200 bg-white flex flex-col h-full relative cursor-pointer hover:scale-[1.02] sm:hover:scale-105 transition-all duration-300 rounded-lg overflow-hidden">
-            <div className="relative w-full h-[140px] sm:h-[160px] md:h-[200px] lg:h-[220px] z-0">
-              <Image src={project.image} alt={project.title} fill className="object-cover" />
+          <div key={project.fields.projectTitle} className="bg-white flex flex-col items-center h-full relative cursor-pointer hover:scale-105 transition-all duration-300">
+            <div className="relative w-full h-[140px] md:h-[200px] z-0">
+              <Image src={`https:${project.fields.projectImage?.fields.file.url}`} alt={project.fields.projectTitle} width={200} height={200} className="object-cover h-full w-full" />
             </div>
-            <div className="w-full flex-1 flex flex-col justify-between p-3 sm:p-4 md:p-5 bg-white shadow-md">
+            <div className="w-full flex-1 flex flex-col justify-between md:items-center p-2 md:p-4 bg-white mx-auto shadow-md">
                 <div>
-                    <h3 className={`text-dark-secondary text-base sm:text-lg md:text-xl font-bold mb-1 md:mb-2`}>{project.title}</h3>
-                    <span className="text-gray-500 text-[0.8rem] sm:text-[0.85rem] md:text-sm">{project.description}</span>
+                    <h3 className={`text-dark-secondary text-base font-bold mb-2`}>{project.fields.projectTitle}</h3>
                 </div>
             </div>
           </div>
         ))}
       </motion.div>
       <div className="flex justify-center">
-        <AppLink href="/projects" label="Learn More" variant="primary" className="border border-primary-green text-[14px] sm:text-[15px] px-[1.5rem] sm:px-[2rem] py-[10px] sm:py-[12px] rounded-[3.4px] font-medium hover:bg-white hover:text-primary-green transition-all duration-300"/>
+        <AppLink href="/projects" label="Learn More" variant="secondary" className="border border-1 border-primary-green text-[14px] px-[2rem] py-[12px] rounded-[3.4px] font-medium hover:bg-primary-green/80 
+        hover:text-white transition-all duration-300"/>
       </div>
     </section>
   );
-}
+} 

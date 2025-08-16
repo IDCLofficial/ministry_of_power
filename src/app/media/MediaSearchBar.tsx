@@ -22,11 +22,11 @@ const MediaSearchBar: React.FC<MediaSearchBarProps> = ({ placeholder = "Search",
         placeholder={placeholder}
         value={query}
         onChange={e => setQuery(e.target.value)}
-        className="flex-1 border border-gray-300 bg-white rounded-l px-4 py-2 focus:outline-none"
+        className="flex-1 border border-gray-300 rounded-l px-4 py-2 focus:outline-none"
       />
       <button
         type="submit"
-        className="bg-green-600 text-white px-8 py-2 rounded-r font-semibold cursor-pointer"
+        className="bg-green-600 text-white px-8 py-2 rounded-r font-semibold"
       >
         Search
       </button>

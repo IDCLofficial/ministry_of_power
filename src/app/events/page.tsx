@@ -3,17 +3,21 @@ import EventsListSection from "./EventsListSection";
 import Footer from "../components/Footer";
 import CTASection from "../components/CTASection";
 import PastEvents from "./PastEvents";
+import getEvents from "./eventsList";
+import { Events } from "../../../lib/types";
 
-export default function EventsPage() {
+export default async function EventsPage() {
+  const events = await getEvents();
+  console.log(events)
   return (
     <div className="bg-white">
       <EventsHeroSection />
-      <EventsListSection />
-      <PastEvents />
+      <EventsListSection events={events as unknown as Events[]} />
+      <PastEvents events={events as unknown as Events[]}/>
       <CTASection 
         heading="Partner with Us to Power Every Community in Imo State"
         subtext="Want to get involved in our electrification initiatives or partner with us? Reach out today"
-        buttonLabel="Contact Us" 
+        buttonLabel="Contact Us"
         buttonHref="/contact-us"
       />
       <Footer />

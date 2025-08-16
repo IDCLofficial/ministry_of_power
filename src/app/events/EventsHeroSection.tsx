@@ -16,7 +16,7 @@ export default function EventsHeroSection() {
           initial={{ opacity: 1 }}
           animate={{}}
         >
-          {"Powering Imo State Events".split(" ").map((word, wordIdx, arr) => (
+          {"Upcoming Events".split(" ").map((word, wordIdx, arr) => (
             <span key={wordIdx} style={{ display: "inline-block", whiteSpace: "pre" }}>
               {word.split("").map((char, charIdx) => (
                 <motion.span

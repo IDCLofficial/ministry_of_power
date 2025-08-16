@@ -1,25 +1,6 @@
-import {newsList} from "../news/newsList";
-import {events} from "../events/eventsList";
+import { contentfulService } from "../../../lib/contentful";
 
-const newsImages = newsList.map((news) => {
-    return {
-        image: news.img,
-        title: news.title,
-        isVideo: false
-    };
-})
-const eventsImages = events.map((event) => {
-    return {
-        image: event.img,
-        title: event.title,
-        isVideo: false
-    };
-});
-
-type mediaItem = {
-    image: string;
-    title: string;
-    isVideo: boolean;
+export default async function getMedia() {
+    const media = await contentfulService.getMediaByMinistryId(process.env.NEXT_PUBLIC_CONTENTFUL_MINISTRY_ID!)
+    return media;
 }
-
-export const mediaItems: mediaItem[] = [...newsImages, ...eventsImages];

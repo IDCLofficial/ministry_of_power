@@ -1,93 +1,58 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
+'use client';
+
+import Image from 'next/image';
+import { useEffect } from 'react';
+import { createPortal } from 'react-dom';
+import { FiX } from 'react-icons/fi';
 
 interface ImageViewerProps {
+  open: boolean;
   src: string;
   alt?: string;
   onClose: () => void;
 }
 
-const ImageViewer: React.FC<ImageViewerProps> = ({ src, alt = "", onClose }) => {
-  const [open, setOpen] = useState(false);
+export default function ImageViewer({ open, src, alt = 'Image preview', onClose }: ImageViewerProps) {
+  const portalTarget = typeof window !== 'undefined' ? document.body : null;
 
-  // Open animation trigger and disable background scroll
   useEffect(() => {
-    const timer = requestAnimationFrame(() => setOpen(true));
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        handleClose();
-      }
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
     };
-    window.addEventListener("keydown", onKeyDown);
-
+    document.addEventListener('keydown', onKey);
+    // prevent background scroll
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
     return () => {
-      cancelAnimationFrame(timer);
-      window.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener('keydown', onKey);
       document.body.style.overflow = prevOverflow;
     };
-  }, []);
+  }, [open, onClose]);
 
-  const handleClose = () => {
-    // play close animation then unmount via parent
-    setOpen(false);
-    // Delay to allow animation to finish
-    setTimeout(() => onClose(), 180);
-  };
+  if (!open) return null;
 
-  return (
-    <div
-      className={`fixed inset-0 z-50 flex items-center justify-center ${
-        open ? "" : "pointer-events-none"
-      }`}
-      aria-modal="true"
-      role="dialog"
-    >
+  const content = (
+    <div className="fixed inset-0 z-[10010]">
       {/* Backdrop */}
-      <div
-        className={`absolute inset-0 bg-black/60 transition-opacity duration-200 ${
-          open ? "opacity-100" : "opacity-0"
-        }`}
-        onClick={handleClose}
-      />
-
-      {/* Modal content */}
-      <div
-        className={`relative z-10 mx-4 w-full max-w-5xl transition-all duration-200 ease-out ${
-          open ? "opacity-100 scale-100" : "opacity-0 scale-95"
-        }`}
-      >
-        {/* Close button */}
-        <button
-          aria-label="Close image"
-          onClick={handleClose}
-          className="absolute -top-10 right-0 text-white/90 hover:text-white transition p-2"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="w-7 h-7"
+      <div className="absolute inset-0 bg-black/80" onClick={onClose} />
+      {/* Content */}
+      <div className="absolute inset-0 flex items-center justify-center p-4">
+        <div className="relative max-w-6xl w-full max-h-[90vh]">
+          <button
+            aria-label="Close image viewer"
+            onClick={onClose}
+            className="absolute -top-10 right-0 text-white text-3xl p-1"
           >
-            <path
-              fillRule="evenodd"
-              d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </button>
-
-        <div className="relative bg-black rounded-lg shadow-xl overflow-hidden">
-          <div className="relative w-full h-[70vh] md:h-[75vh]">
+            <FiX />
+          </button>
+          <div className="relative w-full h-[70vh] md:h-[80vh] bg-black/20 rounded-lg overflow-hidden">
             <Image
               src={src}
               alt={alt}
               fill
-              className="object-contain select-none"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1024px"
+              sizes="100vw"
+              className="object-contain"
               priority
             />
           </div>
@@ -95,6 +60,6 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ src, alt = "", onClose }) => 
       </div>
     </div>
   );
-};
 
-export default ImageViewer;
+  return portalTarget ? createPortal(content, portalTarget) : null;
+}

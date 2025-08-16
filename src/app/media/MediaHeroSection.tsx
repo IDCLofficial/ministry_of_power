@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react";
-import MediaSearchBar from "./MediaSearchBar";
+import SearchBar from "../components/SearchBar";
 import { SubsequentHero } from "../components/Hero";
 import { motion } from "framer-motion";
 import { Title } from "../components/Title";
@@ -10,10 +10,9 @@ interface MediaHeroSectionProps {
   title: string;
   subtitle: string;
   backgroundImage: string;
-  onSearch?: (query: string) => void;
 }
 
-const MediaHeroSection: React.FC<MediaHeroSectionProps> = ({ title, onSearch }) => {
+const MediaHeroSection: React.FC<MediaHeroSectionProps> = ({ title, subtitle }) => {
   return (
     <SubsequentHero
       className={`bg-[url('/images/gradient.png')] bg-cover bg-center`}
@@ -21,9 +20,9 @@ const MediaHeroSection: React.FC<MediaHeroSectionProps> = ({ title, onSearch }) 
       <div className="relative z-10 flex justify-center">
         <Title label="Gallery" />
       </div>
-      <div className="relative z-10 flex flex-col items-center justify-center gap-5">
+      <div className="relative z-10 flex flex-col items-center justify-center gap-2">
         <motion.h1
-          className="text-white text-3xl md:text-5xl font-bold drop-shadow-lg"
+          className="text-white text-3xl md:4xl lg:text-5xl font-bold drop-shadow-lg"
           initial={{ opacity: 1 }}
           animate={{}}
         >
@@ -54,17 +53,9 @@ const MediaHeroSection: React.FC<MediaHeroSectionProps> = ({ title, onSearch }) 
             </span>
           ))}
         </motion.h1>
-        <MediaSearchBar
-          placeholder="Search media..."
-          onSearch={(query) => {
-            if (onSearch) {
-              onSearch(query);
-            }
-          }}
-        />
       </div>
     </SubsequentHero>
   );
 };
 
-export default MediaHeroSection;
+export default MediaHeroSection; 
