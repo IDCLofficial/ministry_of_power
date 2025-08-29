@@ -12,9 +12,9 @@ module.exports = {
 
   deploy : {
     production : {
-      key: 'key.pem',
+      key: '~/.ssh/mop.pem',
       user : 'ubuntu',
-      host : '18.217.59.189',
+      host : 'ministry-of-power',
       ref  : 'origin/master',
       repo : 'git@github.com:IDCLofficial/ministry_of_power.git',
       path : '/home/ubuntu',
