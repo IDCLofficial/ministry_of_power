@@ -1,0 +1,12 @@
+# Women affairs
+Host cbstage
+    HostName 127.0.1.10
+    User root
+    Port 22
+    IdentityFile ~/.ssh/stage_deploy
+# prod server
+Host cbprod
+    HostName 127.0.1.20
+    User root
+    Port 22
+    IdentityFile ~/.ssh/prod_deploy
