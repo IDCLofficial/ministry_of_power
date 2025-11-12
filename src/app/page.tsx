@@ -9,12 +9,14 @@ import FeaturedInitiatives from "./components/FeaturedInitiatives";
 import FeaturedPartners from "./components/FeaturedPartners";
 import { getProject } from "./projects/projects";
 import { Project } from "../../lib/types";
+import Advert from "./components/economic-summit/Advert";
 
 export default async function Home() {
   const projects = await getProject()
   const projectList = projects
   return (
     <div className="h-screen w-full">
+      <Advert />
       <Hero
         title="Imo State Ministry of Power and Electrification" 
         caption= "Providing Power for Every Community in Imo State" 
