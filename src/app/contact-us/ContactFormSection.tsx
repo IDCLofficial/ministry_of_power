@@ -20,7 +20,6 @@ const ContactFormSection = () => {
     // Simulate API call
     setTimeout(() => {
       // In a real application, you would send the form data to your API here
-      console.log("Form submitted:", form);
       
       // Simulate success
       setSuccess(true);
