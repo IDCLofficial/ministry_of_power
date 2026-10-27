@@ -10,6 +10,14 @@ import FeaturedPartners from "./components/FeaturedPartners";
 import { getProject } from "./projects/projects";
 import { Project } from "../../lib/types";
 import Advert from "./components/economic-summit/Advert";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: { absolute: "Ministry of Power | Imo State Government" },
+  description: "Official website of the Ministry of Power, Imo State Government: services, departments, projects, news and events.",
+  path: "/",
+});
+
 
 export default async function Home() {
   const projects = await getProject()
