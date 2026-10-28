@@ -13,8 +13,8 @@ import Advert from "./components/economic-summit/Advert";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: { absolute: "Ministry of Power | Imo State Government" },
-  description: "Official website of the Ministry of Power, Imo State Government: services, departments, projects, news and events.",
+  title: { absolute: "Imo State Ministry of Power and Electrification" },
+  description: "Electricity in Imo State: meter requests, fault reporting, complaints and dispute resolution, mini-grid licensing and power plant development.",
   path: "/",
 });
 

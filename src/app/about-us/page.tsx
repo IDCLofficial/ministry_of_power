@@ -11,7 +11,7 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "About Us",
-  description: "About the Ministry of Power of the Imo State Government: who we are and what we do.",
+  description: "About the Ministry of Power and Electrification of the Imo State Government: who we are and what we do.",
   path: "/about-us",
 });
 

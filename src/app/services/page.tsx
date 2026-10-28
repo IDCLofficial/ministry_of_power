@@ -5,8 +5,8 @@ import ServicesSection from "./ServicesSection";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Services",
-  description: "Services offered by the Ministry of Power of the Imo State Government.",
+  title: "Meter Requests, Fault Reporting and Power Services",
+  description: "Apply for a new electricity meter, report power faults or outages, submit complaints and apply for embedded generation and mini-grid licences in Imo State.",
   path: "/services",
 });
 

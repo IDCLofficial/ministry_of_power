@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Media Gallery",
-  description: "Photo and media gallery of the Ministry of Power, Imo State Government.",
+  description: "Photo and media gallery of the Ministry of Power and Electrification, Imo State Government.",
   path: "/media",
 });
 
